@@ -23,7 +23,7 @@ def chat_completion(prompt):
         sys.exit(f"HTTP {r.status_code}: {r.text[:120]}")
     print(f"done in {dt:.2f}s",file=sys.stderr)
     try:
-        return r.json()["choices"][0]["message"]["content"]
+    return r.json()["choices"][0]["message"]["content"]
     except requests.exceptions.JSONDecodeError:
         print(f"Error: Failed to decode JSON response.", file=sys.stderr)
         print(f"Status Code: {r.status_code}", file=sys.stderr)
